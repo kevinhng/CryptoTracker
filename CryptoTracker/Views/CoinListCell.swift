@@ -9,6 +9,8 @@ import UIKit
 
 class CoinListCell: UITableViewCell {
     
+    static let cellIdentifier = "CoinListCell"
+    
     private lazy var coinImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -45,7 +47,7 @@ class CoinListCell: UITableViewCell {
         coinNameLabel.text = coin.name
         coinSymbolLabel.text = coin.symbol
         coinPriceLabel.text = "\(coin.currentPrice ?? 0)"
-        coinPriceChangeLabel.text = "\(coin.priceChangePercentage24H ?? 0)"
+        coinPriceChangeLabel.text = "\(coin.priceChangePercentage24H ?? 0)%"
     }
     
     private func addSubviews() {
@@ -62,6 +64,8 @@ class CoinListCell: UITableViewCell {
     }
     
     private func configureConstraints() {
+        let verticalSpacing: CGFloat = 2
+        
         NSLayoutConstraint.activate([
             coinImageView.widthAnchor.constraint(equalToConstant: 44),
             coinImageView.heightAnchor.constraint(equalToConstant: 44),
@@ -70,11 +74,11 @@ class CoinListCell: UITableViewCell {
             
             coinNameLabel.leadingAnchor.constraint(equalTo: coinImageView.trailingAnchor, constant: 5),
             coinSymbolLabel.leadingAnchor.constraint(equalTo: coinNameLabel.leadingAnchor),
-            NSLayoutConstraint(item: coinNameLabel, attribute: .bottom, relatedBy: .equal, toItem: coinSymbolLabel, attribute: .bottom, multiplier: 1, constant: 5),
+            NSLayoutConstraint(item: coinSymbolLabel, attribute: .top, relatedBy: .equal, toItem: coinNameLabel, attribute: .bottom, multiplier: 1, constant: verticalSpacing),
             
             coinPriceLabel.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
             coinPriceChangeLabel.trailingAnchor.constraint(equalTo: coinPriceLabel.trailingAnchor),
-            NSLayoutConstraint(item: coinPriceLabel, attribute: .bottom, relatedBy: .equal, toItem: coinPriceChangeLabel, attribute: .bottom, multiplier: 1, constant: 5),
+            NSLayoutConstraint(item: coinPriceChangeLabel, attribute: .top, relatedBy: .equal, toItem: coinPriceLabel, attribute: .bottom, multiplier: 1, constant: verticalSpacing),
         ])
     }
 }
