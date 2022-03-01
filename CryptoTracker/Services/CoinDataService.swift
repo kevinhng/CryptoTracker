@@ -38,7 +38,7 @@ class CoinDataService {
                 completion(.failure(.transportError(error)))
             }
             
-            if let response = response as? HTTPURLResponse, response.statusCode >= 200 && response.statusCode < 300 {
+            if let response = response as? HTTPURLResponse, !(response.statusCode >= 200 && response.statusCode < 300) {
                 completion(.failure(.serverError(statusCode: response.statusCode)))
             }
             
