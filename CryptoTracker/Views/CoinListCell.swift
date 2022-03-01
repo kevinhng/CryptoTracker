@@ -20,33 +20,66 @@ class CoinListCell: UITableViewCell {
     private lazy var coinNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 17, weight: .medium)
         return label
     }()
     
     private lazy var coinSymbolLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 15)
+        label.textColor = .secondaryLabel
         return label
     }()
     
     private lazy var coinPriceLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .monospacedDigitSystemFont(ofSize: 17, weight: .medium)
         return label
     }()
     
     private lazy var coinPriceChangeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .monospacedDigitSystemFont(ofSize: 15, weight: .regular)
         return label
+    }()
+    
+    private lazy var hStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .horizontal
+        stackView.alignment = .center
+        stackView.distribution = .fillProportionally
+        return stackView
+    }()
+    
+    private lazy var leftVStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.alignment = .leading
+        stackView.distribution = .equalCentering
+        return stackView
+    }()
+    
+    private lazy var rightVStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.alignment = .trailing
+        stackView.distribution = .equalSpacing
+        return stackView
     }()
     
     func configure(with coin: Coin) {
         addSubviews()
         
         coinNameLabel.text = coin.name
-        coinSymbolLabel.text = coin.symbol
-        coinPriceLabel.text = "\(coin.currentPrice ?? 0)"
+        coinSymbolLabel.text = coin.symbol.uppercased()
+        coinPriceLabel.text = "$\(coin.currentPrice ?? 0)"
         coinPriceChangeLabel.text = "\(coin.priceChangePercentage24H ?? 0)%"
     }
     
@@ -55,30 +88,34 @@ class CoinListCell: UITableViewCell {
         
         coinImageView.image = UIImage(systemName: "circle.fill")
         
-        addSubview(coinNameLabel)
-        addSubview(coinSymbolLabel)
-        addSubview(coinPriceLabel)
-        addSubview(coinPriceChangeLabel)
+        arrangeStackViews()
+        addSubview(hStackView)
         
         configureConstraints()
     }
     
     private func configureConstraints() {
-        let verticalSpacing: CGFloat = 2
-        
         NSLayoutConstraint.activate([
             coinImageView.widthAnchor.constraint(equalToConstant: 44),
             coinImageView.heightAnchor.constraint(equalToConstant: 44),
             coinImageView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
             coinImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
             
-            coinNameLabel.leadingAnchor.constraint(equalTo: coinImageView.trailingAnchor, constant: 5),
-            coinSymbolLabel.leadingAnchor.constraint(equalTo: coinNameLabel.leadingAnchor),
-            NSLayoutConstraint(item: coinSymbolLabel, attribute: .top, relatedBy: .equal, toItem: coinNameLabel, attribute: .bottom, multiplier: 1, constant: verticalSpacing),
-            
-            coinPriceLabel.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
-            coinPriceChangeLabel.trailingAnchor.constraint(equalTo: coinPriceLabel.trailingAnchor),
-            NSLayoutConstraint(item: coinPriceChangeLabel, attribute: .top, relatedBy: .equal, toItem: coinPriceLabel, attribute: .bottom, multiplier: 1, constant: verticalSpacing),
+            hStackView.topAnchor.constraint(equalTo: topAnchor),
+            hStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            hStackView.leadingAnchor.constraint(equalTo: coinImageView.trailingAnchor, constant: 5),
+            hStackView.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor)
         ])
+    }
+    
+    private func arrangeStackViews() {
+        leftVStackView.addArrangedSubview(coinNameLabel)
+        leftVStackView.addArrangedSubview(coinSymbolLabel)
+        
+        rightVStackView.addArrangedSubview(coinPriceLabel)
+        rightVStackView.addArrangedSubview(coinPriceChangeLabel)
+        
+        hStackView.addArrangedSubview(leftVStackView)
+        hStackView.addArrangedSubview(rightVStackView)
     }
 }
