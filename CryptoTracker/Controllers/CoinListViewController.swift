@@ -11,6 +11,13 @@ class CoinListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureNavigationBar()
+    }
+    
+    private func configureNavigationBar() {
+        navigationController?.navigationBar.topItem?.title = "Crypto Tracker"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }
 
