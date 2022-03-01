@@ -15,6 +15,7 @@ class CoinListViewController: UITableViewController {
         super.viewDidLoad()
         
         configureNavigationBar()
+        configureTableView()
         getCoins()
     }
     
@@ -33,6 +34,10 @@ class CoinListViewController: UITableViewController {
         }
     }
     
+    private func configureTableView() {
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    }
+    
     private func configureNavigationBar() {
         navigationController?.navigationBar.topItem?.title = "Crypto Tracker"
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -42,13 +47,16 @@ class CoinListViewController: UITableViewController {
 // MARK: - Table view data source
 extension CoinListViewController {
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return coins.count
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? UITableViewCell else {
+            fatalError("Unable to dequeue cell")
+        }
+        
+        cell.textLabel?.text = coins[indexPath.row].name
+        return cell
     }
 }
