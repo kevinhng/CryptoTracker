@@ -35,7 +35,7 @@ class CoinListViewController: UITableViewController {
     }
     
     private func configureTableView() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(CoinListCell.self, forCellReuseIdentifier: CoinListCell.cellIdentifier)
     }
     
     private func configureNavigationBar() {
@@ -52,11 +52,11 @@ extension CoinListViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? UITableViewCell else {
-            fatalError("Unable to dequeue cell")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CoinListCell.cellIdentifier, for: indexPath) as? CoinListCell else {
+            fatalError("Unable to dequeue \(CoinListCell.cellIdentifier)")
         }
         
-        cell.textLabel?.text = coins[indexPath.row].name
+        cell.configure(with: coins[indexPath.row])
         return cell
     }
 }
