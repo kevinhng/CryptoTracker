@@ -9,10 +9,28 @@ import UIKit
 
 class CoinListViewController: UITableViewController {
     
+    private var coins: [Coin] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureNavigationBar()
+        getCoins()
+    }
+    
+    private func getCoins() {
+        CoinDataService.shared.getCoins { [weak self] result in
+            switch result {
+            case .success(let coins):
+                self?.coins = coins
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     private func configureNavigationBar() {
