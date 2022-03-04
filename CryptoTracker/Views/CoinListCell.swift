@@ -77,16 +77,29 @@ class CoinListCell: UITableViewCell {
     func configure(with coin: Coin) {
         addSubviews()
         
+        getCoinImage(for: coin)
         coinNameLabel.text = coin.name
         coinSymbolLabel.text = coin.symbol.uppercased()
         coinPriceLabel.text = "$\(coin.currentPrice ?? 0)"
         coinPriceChangeLabel.text = "\(coin.priceChangePercentage24H ?? 0)%"
     }
     
+    private func getCoinImage(for coin: Coin) {
+        CoinImageService.shared.getImage(for: coin) { [weak self] result in
+            switch result {
+            case .failure(let error):
+                print(error.localizedDescription)
+            case .success(let image):
+                DispatchQueue.main.async {
+                    self?.coinImageView.image = image
+                    print("loaded")
+                }
+            }
+        }
+    }
+    
     private func addSubviews() {
         addSubview(coinImageView)
-        
-        coinImageView.image = UIImage(systemName: "circle.fill")
         
         arrangeStackViews()
         addSubview(hStackView)
