@@ -44,6 +44,17 @@ class CoinListViewController: UITableViewController {
     }
 }
 
+// MARK: - Table view delegate
+extension CoinListViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailViewController = CoinDetailViewController()
+        let coin = coins[indexPath.row]
+        detailViewController.configure(with: coin)
+        detailViewController.title = coin.name
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
+}
+
 // MARK: - Table view data source
 extension CoinListViewController {
     
