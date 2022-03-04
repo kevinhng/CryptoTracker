@@ -109,14 +109,14 @@ class CoinListCell: UITableViewCell {
     
     private func configureConstraints() {
         NSLayoutConstraint.activate([
-            coinImageView.widthAnchor.constraint(equalToConstant: 44),
-            coinImageView.heightAnchor.constraint(equalToConstant: 44),
+            coinImageView.widthAnchor.constraint(equalToConstant: 36),
+            coinImageView.heightAnchor.constraint(equalToConstant: 36),
             coinImageView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
             coinImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
             
             hStackView.topAnchor.constraint(equalTo: topAnchor),
             hStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            hStackView.leadingAnchor.constraint(equalTo: coinImageView.trailingAnchor, constant: 5),
+            hStackView.leadingAnchor.constraint(equalTo: coinImageView.trailingAnchor, constant: 10),
             hStackView.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor)
         ])
     }
