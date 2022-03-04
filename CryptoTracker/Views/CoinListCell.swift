@@ -92,7 +92,6 @@ class CoinListCell: UITableViewCell {
             case .success(let image):
                 DispatchQueue.main.async {
                     self?.coinImageView.image = image
-                    print("loaded")
                 }
             }
         }
