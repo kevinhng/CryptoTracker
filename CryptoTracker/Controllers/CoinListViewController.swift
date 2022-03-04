@@ -47,6 +47,10 @@ class CoinListViewController: UITableViewController {
 // MARK: - Table view data source
 extension CoinListViewController {
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 56
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return coins.count
     }
