@@ -26,6 +26,14 @@ class CoinDetailViewController: UIViewController {
             navigationController?.navigationBar.topItem?.backButtonDisplayMode = .minimal
         }
         
+        navigationController?.navigationBar.tintColor = .label
+        
+        guard let coin = coin else { return }
+        
+        let titleView = CoinDetailTitleView()
+        titleView.configure(with: coin)
+        navigationItem.titleView = titleView
+        
         navigationItem.largeTitleDisplayMode = .never
     }
 }
