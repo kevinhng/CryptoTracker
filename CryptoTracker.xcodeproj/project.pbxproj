@@ -17,6 +17,7 @@
 		0AC92D2927CFB3FC00D5C1F8 /* CoinImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC92D2827CFB3FC00D5C1F8 /* CoinImageService.swift */; };
 		0AF3C39927D2428A00AC36C3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3C39827D2428A00AC36C3 /* NetworkError.swift */; };
 		0AF3C39C27D24FD100AC36C3 /* ACFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3C39B27D24FD100AC36C3 /* ACFileManager.swift */; };
+		0AF3C39F27D2576F00AC36C3 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3C39E27D2576F00AC36C3 /* Double.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		0AC92D2827CFB3FC00D5C1F8 /* CoinImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageService.swift; sourceTree = "<group>"; };
 		0AF3C39827D2428A00AC36C3 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		0AF3C39B27D24FD100AC36C3 /* ACFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACFileManager.swift; sourceTree = "<group>"; };
+		0AF3C39E27D2576F00AC36C3 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				0AC92D1A27CE88F400D5C1F8 /* App */,
+				0AF3C39D27D2575C00AC36C3 /* Extension */,
 				0AC92D2227CE8C3C00D5C1F8 /* Services */,
 				0AC92D1B27CE88FD00D5C1F8 /* Supporting Files */,
 				0AC92D1F27CE8BA900D5C1F8 /* Model */,
@@ -141,6 +144,14 @@
 				0AF3C39B27D24FD100AC36C3 /* ACFileManager.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		0AF3C39D27D2575C00AC36C3 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0AF3C39E27D2576F00AC36C3 /* Double.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +231,7 @@
 				0AC92D1E27CE89D400D5C1F8 /* CoinListViewController.swift in Sources */,
 				0AF3C39C27D24FD100AC36C3 /* ACFileManager.swift in Sources */,
 				0AC92D2927CFB3FC00D5C1F8 /* CoinImageService.swift in Sources */,
+				0AF3C39F27D2576F00AC36C3 /* Double.swift in Sources */,
 				0AC92D2727CEA10000D5C1F8 /* CoinListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
