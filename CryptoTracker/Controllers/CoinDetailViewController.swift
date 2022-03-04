@@ -15,6 +15,17 @@ class CoinDetailViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         configureNavigationBar()
+        
+        let graphView = GraphView(viewModel: GraphViewModel())
+        graphView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(graphView)
+        NSLayoutConstraint.activate([
+            graphView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            graphView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            graphView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            graphView.heightAnchor.constraint(equalToConstant: 300)
+            
+        ])
     }
     
     func configure(with coin: Coin) {
