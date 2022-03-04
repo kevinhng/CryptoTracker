@@ -156,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				0AF3C39E27D2576F00AC36C3 /* Double.swift */,
+				0AF3C3A927D2A22F00AC36C3 /* Array.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -239,6 +240,7 @@
 				0AC92D1E27CE89D400D5C1F8 /* CoinListViewController.swift in Sources */,
 				0AF3C39C27D24FD100AC36C3 /* ACFileManager.swift in Sources */,
 				0AC92D2927CFB3FC00D5C1F8 /* CoinImageService.swift in Sources */,
+				0AF3C3AA27D2A22F00AC36C3 /* Array.swift in Sources */,
 				0AF3C39F27D2576F00AC36C3 /* Double.swift in Sources */,
 				0AC92D2727CEA10000D5C1F8 /* CoinListCell.swift in Sources */,
 			);
