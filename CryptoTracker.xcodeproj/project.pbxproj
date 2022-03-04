@@ -23,6 +23,7 @@
 		0AF3C3A627D289C200AC36C3 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3C3A527D289C200AC36C3 /* GraphView.swift */; };
 		0AF3C3A827D28B2900AC36C3 /* GraphViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3C3A727D28B2900AC36C3 /* GraphViewModel.swift */; };
 		0AF3C3AA27D2A22F00AC36C3 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3C3A927D2A22F00AC36C3 /* Array.swift */; };
+		0AF3C3AC27D2B09200AC36C3 /* MarketChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3C3AB27D2B09200AC36C3 /* MarketChart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		0AF3C3A527D289C200AC36C3 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		0AF3C3A727D28B2900AC36C3 /* GraphViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewModel.swift; sourceTree = "<group>"; };
 		0AF3C3A927D2A22F00AC36C3 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		0AF3C3AB27D2B09200AC36C3 /* MarketChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketChart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				0AC92D2027CE8BBB00D5C1F8 /* Coin.swift */,
+				0AF3C3AB27D2B09200AC36C3 /* MarketChart.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AF3C3AC27D2B09200AC36C3 /* MarketChart.swift in Sources */,
 				0AC92D2427CE8C6200D5C1F8 /* CoinDataService.swift in Sources */,
 				0AF3C39927D2428A00AC36C3 /* NetworkError.swift in Sources */,
 				0AC92D2127CE8BBB00D5C1F8 /* Coin.swift in Sources */,
