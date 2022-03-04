@@ -22,6 +22,7 @@ class ACFileManager {
         
         do {
             try data.write(to: url)
+            print(url)
         } catch {
             print("Error saving image. ImageName: \(imageName). \(error)")
         }
