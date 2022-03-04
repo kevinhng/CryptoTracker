@@ -58,11 +58,4 @@ class CoinDataService {
         
         task.resume()
     }
-    
-    enum NetworkError: Error {
-        case transportError(Error)
-        case serverError(statusCode: Int)
-        case noData
-        case decodingError(Error)
-    }
 }
