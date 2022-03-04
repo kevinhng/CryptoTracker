@@ -80,8 +80,9 @@ class CoinListCell: UITableViewCell {
         getCoinImage(for: coin)
         coinNameLabel.text = coin.name
         coinSymbolLabel.text = coin.symbol.uppercased()
-        coinPriceLabel.text = "$\(coin.currentPrice ?? 0)"
-        coinPriceChangeLabel.text = "\(coin.priceChangePercentage24H ?? 0)%"
+        coinPriceLabel.text = coin.currentPrice?.asCurrency()
+        coinPriceChangeLabel.text = coin.priceChangePercentage24H?.asPercentString()
+        coinPriceChangeLabel.textColor = coin.priceChangePercentage24H ?? 0 > 0 ? .systemGreen : .systemRed
     }
     
     private func getCoinImage(for coin: Coin) {
