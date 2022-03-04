@@ -18,6 +18,7 @@
 		0AF3C39927D2428A00AC36C3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3C39827D2428A00AC36C3 /* NetworkError.swift */; };
 		0AF3C39C27D24FD100AC36C3 /* ACFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3C39B27D24FD100AC36C3 /* ACFileManager.swift */; };
 		0AF3C39F27D2576F00AC36C3 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3C39E27D2576F00AC36C3 /* Double.swift */; };
+		0AF3C3A127D2606D00AC36C3 /* CoinDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3C3A027D2606C00AC36C3 /* CoinDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		0AF3C39827D2428A00AC36C3 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		0AF3C39B27D24FD100AC36C3 /* ACFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACFileManager.swift; sourceTree = "<group>"; };
 		0AF3C39E27D2576F00AC36C3 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		0AF3C3A027D2606C00AC36C3 /* CoinDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				0AC92D1D27CE89D300D5C1F8 /* CoinListViewController.swift */,
+				0AF3C3A027D2606C00AC36C3 /* CoinDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				0AF3C39927D2428A00AC36C3 /* NetworkError.swift in Sources */,
 				0AC92D2127CE8BBB00D5C1F8 /* Coin.swift in Sources */,
 				0AC92D0727CE88DE00D5C1F8 /* AppDelegate.swift in Sources */,
+				0AF3C3A127D2606D00AC36C3 /* CoinDetailViewController.swift in Sources */,
 				0AC92D1E27CE89D400D5C1F8 /* CoinListViewController.swift in Sources */,
 				0AF3C39C27D24FD100AC36C3 /* ACFileManager.swift in Sources */,
 				0AC92D2927CFB3FC00D5C1F8 /* CoinImageService.swift in Sources */,
