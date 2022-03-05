@@ -13,6 +13,9 @@ class GraphView: UIView {
     
     private lazy var graphLayer: CAShapeLayer = {
         let layer = CAShapeLayer()
+        layer.fillColor = .none
+        layer.strokeColor = UIColor.label.cgColor
+        layer.lineWidth = 2
         return layer
     }()
     
@@ -20,14 +23,12 @@ class GraphView: UIView {
         self.viewModel = viewModel
         
         super.init(frame: .zero)
+        
+        viewModel.delegate = self
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        graphLayer.path = drawGraph()
-        graphLayer.strokeColor = UIColor.white.cgColor
-        graphLayer.lineWidth = 2
         layer.addSublayer(graphLayer)
     }
     
@@ -36,7 +37,8 @@ class GraphView: UIView {
     }
     
     private func drawGraph() -> CGPath {
-        let points = viewModel.data.normalized
+        guard let chart = viewModel.chart else { return CGPath(rect: frame, transform: nil) }
+        let points = chart.dataPoints.normalized
         let width = frame.width
         let height = frame.height
         
@@ -60,40 +62,12 @@ class GraphView: UIView {
         
         return path.cgPath
     }
-    
-    
-    
-//        override func draw(_ rect: CGRect) {
-//            let points = viewModel.data.normalized
-//
-//            let width = rect.width
-//            let height = rect.height
-//            let maxValue = viewModel.data.max() ?? 0
-//
-//            let columnXPoint = { (column: Int) -> CGFloat in
-//                let spacing = width / CGFloat(self.viewModel.data.count - 1)
-//                return CGFloat(column) * spacing
-//            }
-//
-//            let columnYPoint = { (graphPoint: Double) -> CGFloat in
-//                let yPoint = CGFloat(graphPoint) * height
-//                return height - yPoint
-//            }
-//            UIColor.white.setFill()
-//            UIColor.white.setStroke()
-//
-//            let graphPath = UIBezierPath()
-//
-//            graphPath.move(to: CGPoint(x: columnXPoint(0), y: columnYPoint(points[0])))
-//
-//            for i in 1..<viewModel.data.count {
-//                let nextPoint = CGPoint(x: columnXPoint(i), y: columnYPoint(points[i]))
-//                print(nextPoint)
-//                graphPath.addLine(to: nextPoint)
-//            }
-//            graphPath.lineWidth = 2
-//            graphPath.stroke()
-//
-//
-//        }
+}
+
+extension GraphView: GraphViewModelDelegate {
+    func didLoad() {
+        DispatchQueue.main.async {
+            self.graphLayer.path = self.drawGraph()
+        }
+    }
 }
