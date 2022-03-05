@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol SegmentedControlDelegate: NSObject {
+    func didSelectSegment(_ segment: ChartDays)
+}
+
 @IBDesignable
 class SegmentedControl: UIView {
     @IBInspectable var textColor: UIColor = .lightGray {
@@ -36,6 +40,7 @@ class SegmentedControl: UIView {
     private var buttons = [UIButton]()
     private var selector: UIView!
     
+    weak var delegate: SegmentedControlDelegate?
     
     private func updateView() {
         buttons.removeAll()
@@ -85,6 +90,8 @@ class SegmentedControl: UIView {
                 let selectorStartPosition = bounds.width / CGFloat(buttons.count) * CGFloat(index)
                 UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: [], animations: {
                     self.selector.frame.origin.x = selectorStartPosition + 10 })
+                
+                delegate?.didSelectSegment(ChartDays.allCases.first(where: {$0.rawValue == button.titleLabel?.text}) ?? .thirty)
             }
         }
     }
