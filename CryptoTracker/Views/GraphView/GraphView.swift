@@ -15,7 +15,8 @@ class GraphView: UIView {
         let layer = CAShapeLayer()
         layer.fillColor = .none
         layer.strokeColor = UIColor.label.cgColor
-        layer.lineWidth = 2
+        layer.lineWidth = 1.5
+        layer.lineJoin = .round
         return layer
     }()
     
@@ -29,6 +30,7 @@ class GraphView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        graphLayer.path = drawGraph()
         layer.addSublayer(graphLayer)
     }
     
@@ -37,10 +39,18 @@ class GraphView: UIView {
     }
     
     private func drawGraph() -> CGPath {
-        guard let chart = viewModel.chart else { return CGPath(rect: frame, transform: nil) }
-        let points = chart.dataPoints.normalized
+        let path = UIBezierPath()
         let width = frame.width
         let height = frame.height
+        
+        guard let chart = viewModel.chart else {
+            path.move(to: CGPoint(x: 0, y: height / 2))
+            path.addLine(to: CGPoint(x: width, y: height / 2))
+            return path.cgPath
+        }
+        
+        let points = chart.dataPoints.normalized
+
         
         let xPoint = { (index: Int) -> CGFloat in
             let spacing = width / CGFloat(points.count - 1)
@@ -52,7 +62,6 @@ class GraphView: UIView {
             return height - y
         }
         
-        let path = UIBezierPath()
         path.move(to: CGPoint(x: xPoint(0), y: yPoint(points[0])))
         
         for i in 1..<points.count {

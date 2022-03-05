@@ -26,7 +26,7 @@ class CoinDetailViewController: UIViewController {
     private lazy var coinPriceLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 28, weight: .semibold)
+        label.font = .systemFont(ofSize: 28, weight: .bold)
         return label
     }()
     

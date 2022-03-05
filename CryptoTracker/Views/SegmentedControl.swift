@@ -44,6 +44,7 @@ class SegmentedControl: UIView {
             let button = UIButton(type: .system)
             button.setTitle(title, for: .normal)
             button.setTitleColor(textColor, for: .normal)
+            button.titleLabel?.font = .systemFont(ofSize: 13, weight: .semibold)
             button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
             buttons.append(button)
         }
