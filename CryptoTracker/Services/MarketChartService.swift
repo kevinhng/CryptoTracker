@@ -10,7 +10,7 @@ import Foundation
 class MarketChartService {
     static let shared = MarketChartService()
     
-    func getMarketData(for coin: Coin, completion: @escaping (Result<MarketChart, NetworkError>) -> Void) {
+    func getMarketData(for coin: Coin, days: ChartDays, completion: @escaping (Result<MarketChart, NetworkError>) -> Void) {
         
         // https://api.coingecko.com/api/v3/coins/ethereum/market_chart?vs_currency=usd&days=30&interval=daily
         
@@ -20,8 +20,8 @@ class MarketChartService {
         components.path = "/api/v3/coins/\(coin.id)/market_chart"
         components.queryItems = [
             URLQueryItem(name: "vs_currency", value: "usd"),
-            URLQueryItem(name: "days", value: "30"),
-            URLQueryItem(name: "interval", value: "daily"),
+            URLQueryItem(name: "days", value: days.rawValue),
+           // URLQueryItem(name: "interval", value: "daily"),
         ]
         
         guard let url = components.url else {
