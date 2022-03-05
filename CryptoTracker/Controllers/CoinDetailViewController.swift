@@ -16,7 +16,7 @@ class CoinDetailViewController: UIViewController {
         view.backgroundColor = .systemBackground
         configureNavigationBar()
         
-        let graphView = GraphView(viewModel: GraphViewModel())
+        let graphView = GraphView(viewModel: GraphViewModel(coin: coin!, for: .thirty))
         graphView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(graphView)
         NSLayoutConstraint.activate([
