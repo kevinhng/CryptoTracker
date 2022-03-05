@@ -36,6 +36,16 @@ class CoinDetailViewController: UIViewController {
         return graphView
     }()
     
+    private lazy var segmentedContol: SegmentedControl = {
+        let segmentedControl = SegmentedControl()
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        segmentedControl.buttonTitles = ["24h", "7d", "30d", "90d", "1y", "All"]
+        segmentedControl.textColor = .lightGray
+        segmentedControl.selectorTextColor = .label
+        segmentedControl.selectorColor = .secondarySystemFill
+        return segmentedControl
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -56,6 +66,7 @@ class CoinDetailViewController: UIViewController {
         
         contentView.addSubview(coinPriceLabel)
         contentView.addSubview(graphView)
+        contentView.addSubview(segmentedContol)
     }
     
     private func configureConstraints() {
@@ -78,7 +89,12 @@ class CoinDetailViewController: UIViewController {
             graphView.topAnchor.constraint(equalTo: coinPriceLabel.bottomAnchor, constant: 20),
             graphView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             graphView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            graphView.heightAnchor.constraint(equalToConstant: 200)
+            graphView.heightAnchor.constraint(equalToConstant: 200),
+            
+            segmentedContol.topAnchor.constraint(equalTo: graphView.bottomAnchor, constant: 20),
+            segmentedContol.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            segmentedContol.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            segmentedContol.heightAnchor.constraint(equalToConstant: 32)
             
             
         ])
