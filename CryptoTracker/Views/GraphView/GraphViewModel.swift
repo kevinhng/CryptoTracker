@@ -24,7 +24,7 @@ class GraphViewModel {
         getMarketChart(days: days)
     }
     
-    private func getMarketChart(days: ChartDays) {
+    func getMarketChart(days: ChartDays) {
         MarketChartService.shared.getMarketData(for: self.coin, days: days) { [weak self] completion in
             switch completion {
             case .success(let marketChart):
