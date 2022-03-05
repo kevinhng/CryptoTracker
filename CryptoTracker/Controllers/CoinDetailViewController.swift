@@ -43,6 +43,7 @@ class CoinDetailViewController: UIViewController {
         segmentedControl.textColor = .lightGray
         segmentedControl.selectorTextColor = .label
         segmentedControl.selectorColor = .secondarySystemFill
+        segmentedControl.delegate = self
         return segmentedControl
     }()
     
@@ -115,5 +116,12 @@ class CoinDetailViewController: UIViewController {
         navigationItem.largeTitleDisplayMode = .never
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "bookmark", withConfiguration: UIImage.SymbolConfiguration(pointSize: 17, weight: .semibold)), style: .plain, target: self, action: nil)
+    }
+}
+
+// MARK: - SegmentedControl Delegate
+extension CoinDetailViewController: SegmentedControlDelegate {
+    func didSelectSegment(_ segment: ChartDays) {
+        graphView.viewModel.getMarketChart(days: segment)
     }
 }
