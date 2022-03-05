@@ -24,6 +24,7 @@
 		0AF3C3A827D28B2900AC36C3 /* GraphViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3C3A727D28B2900AC36C3 /* GraphViewModel.swift */; };
 		0AF3C3AA27D2A22F00AC36C3 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3C3A927D2A22F00AC36C3 /* Array.swift */; };
 		0AF3C3AC27D2B09200AC36C3 /* MarketChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3C3AB27D2B09200AC36C3 /* MarketChart.swift */; };
+		0AF3C3AE27D2B1E200AC36C3 /* MarketChartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3C3AD27D2B1E200AC36C3 /* MarketChartService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		0AF3C3A727D28B2900AC36C3 /* GraphViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewModel.swift; sourceTree = "<group>"; };
 		0AF3C3A927D2A22F00AC36C3 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		0AF3C3AB27D2B09200AC36C3 /* MarketChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketChart.swift; sourceTree = "<group>"; };
+		0AF3C3AD27D2B1E200AC36C3 /* MarketChartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketChartService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			children = (
 				0AC92D2327CE8C6200D5C1F8 /* CoinDataService.swift */,
 				0AC92D2827CFB3FC00D5C1F8 /* CoinImageService.swift */,
+				0AF3C3AD27D2B1E200AC36C3 /* MarketChartService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				0AC92D1E27CE89D400D5C1F8 /* CoinListViewController.swift in Sources */,
 				0AF3C39C27D24FD100AC36C3 /* ACFileManager.swift in Sources */,
 				0AC92D2927CFB3FC00D5C1F8 /* CoinImageService.swift in Sources */,
+				0AF3C3AE27D2B1E200AC36C3 /* MarketChartService.swift in Sources */,
 				0AF3C3AA27D2A22F00AC36C3 /* Array.swift in Sources */,
 				0AF3C39F27D2576F00AC36C3 /* Double.swift in Sources */,
 				0AC92D2727CEA10000D5C1F8 /* CoinListCell.swift in Sources */,
