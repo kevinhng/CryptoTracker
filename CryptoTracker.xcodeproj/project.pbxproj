@@ -25,6 +25,7 @@
 		0AF3C3AA27D2A22F00AC36C3 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3C3A927D2A22F00AC36C3 /* Array.swift */; };
 		0AF3C3AC27D2B09200AC36C3 /* MarketChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3C3AB27D2B09200AC36C3 /* MarketChart.swift */; };
 		0AF3C3AE27D2B1E200AC36C3 /* MarketChartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3C3AD27D2B1E200AC36C3 /* MarketChartService.swift */; };
+		0AF3C3B227D386AE00AC36C3 /* ChartDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3C3B127D386AE00AC36C3 /* ChartDays.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		0AF3C3A927D2A22F00AC36C3 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		0AF3C3AB27D2B09200AC36C3 /* MarketChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketChart.swift; sourceTree = "<group>"; };
 		0AF3C3AD27D2B1E200AC36C3 /* MarketChartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketChartService.swift; sourceTree = "<group>"; };
+		0AF3C3B127D386AE00AC36C3 /* ChartDays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDays.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				0AF3C39827D2428A00AC36C3 /* NetworkError.swift */,
+				0AF3C3B127D386AE00AC36C3 /* ChartDays.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				0AF3C3A127D2606D00AC36C3 /* CoinDetailViewController.swift in Sources */,
 				0AC92D1E27CE89D400D5C1F8 /* CoinListViewController.swift in Sources */,
 				0AF3C39C27D24FD100AC36C3 /* ACFileManager.swift in Sources */,
+				0AF3C3B227D386AE00AC36C3 /* ChartDays.swift in Sources */,
 				0AC92D2927CFB3FC00D5C1F8 /* CoinImageService.swift in Sources */,
 				0AF3C3AE27D2B1E200AC36C3 /* MarketChartService.swift in Sources */,
 				0AF3C3AA27D2A22F00AC36C3 /* Array.swift in Sources */,
