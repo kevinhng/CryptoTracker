@@ -39,7 +39,7 @@ class CoinDetailViewController: UIViewController {
     private lazy var segmentedContol: SegmentedControl = {
         let segmentedControl = SegmentedControl()
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
-        segmentedControl.buttonTitles = ["24h", "7d", "30d", "90d", "1y", "All"]
+        segmentedControl.buttonTitles = ChartDays.allCases.map{ $0.rawValue }
         segmentedControl.textColor = .lightGray
         segmentedControl.selectorTextColor = .label
         segmentedControl.selectorColor = .secondarySystemFill

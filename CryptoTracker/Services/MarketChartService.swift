@@ -20,7 +20,7 @@ class MarketChartService {
         components.path = "/api/v3/coins/\(coin.id)/market_chart"
         components.queryItems = [
             URLQueryItem(name: "vs_currency", value: "usd"),
-            URLQueryItem(name: "days", value: days.rawValue),
+            URLQueryItem(name: "days", value: days.urlValue),
            // URLQueryItem(name: "interval", value: "daily"),
         ]
         
