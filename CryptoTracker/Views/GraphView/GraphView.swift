@@ -76,6 +76,11 @@ class GraphView: UIView {
 extension GraphView: GraphViewModelDelegate {
     func didLoad() {
         DispatchQueue.main.async {
+            let animation = CABasicAnimation(keyPath: "path")
+            animation.duration = 0.4
+            animation.byValue = self.drawGraph
+
+            self.graphLayer.add(animation, forKey: animation.keyPath)
             self.graphLayer.path = self.drawGraph()
         }
     }
