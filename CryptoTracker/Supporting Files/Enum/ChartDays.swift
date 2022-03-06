@@ -31,4 +31,13 @@ enum ChartDays: String, CaseIterable {
             return "max"
         }
     }
+    
+    var interval: String {
+        switch self {
+        case .one, .seven:
+            return "hourly"
+        case .thirty, .ninety, .year, .max:
+            return "daily"
+        }
+    }
 }

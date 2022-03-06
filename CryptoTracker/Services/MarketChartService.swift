@@ -21,7 +21,7 @@ class MarketChartService {
         components.queryItems = [
             URLQueryItem(name: "vs_currency", value: "usd"),
             URLQueryItem(name: "days", value: days.urlValue),
-           // URLQueryItem(name: "interval", value: "daily"),
+            URLQueryItem(name: "interval", value: days.interval),
         ]
         
         guard let url = components.url else {
