@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A71D63927D61E6100C5B667 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A71D63827D61E6100C5B667 /* HapticsManager.swift */; };
 		0AC92D0727CE88DE00D5C1F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AC92D0627CE88DE00D5C1F8 /* AppDelegate.swift */; };
 		0AC92D1027CE88E000D5C1F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AC92D0F27CE88E000D5C1F8 /* Assets.xcassets */; };
 		0AC92D1327CE88E000D5C1F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AC92D1127CE88E000D5C1F8 /* LaunchScreen.storyboard */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A71D63827D61E6100C5B667 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		0AC92D0327CE88DE00D5C1F8 /* CryptoTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AC92D0627CE88DE00D5C1F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0AC92D0F27CE88E000D5C1F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				0AF3C39B27D24FD100AC36C3 /* ACFileManager.swift */,
+				0A71D63827D61E6100C5B667 /* HapticsManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				0AC92D2127CE8BBB00D5C1F8 /* Coin.swift in Sources */,
 				0AF3C3A327D2657400AC36C3 /* CoinDetailTitleView.swift in Sources */,
 				0AC92D0727CE88DE00D5C1F8 /* AppDelegate.swift in Sources */,
+				0A71D63927D61E6100C5B667 /* HapticsManager.swift in Sources */,
 				0AF3C3A127D2606D00AC36C3 /* CoinDetailViewController.swift in Sources */,
 				0AC92D1E27CE89D400D5C1F8 /* CoinListViewController.swift in Sources */,
 				0AF3C39C27D24FD100AC36C3 /* ACFileManager.swift in Sources */,
