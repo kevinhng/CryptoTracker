@@ -66,8 +66,8 @@ class GraphView: UIView {
     }
     
     @objc private func handleLongPress(_ recognizer: UILongPressGestureRecognizer) {
-        
         if recognizer.state == .began {
+            HapticsManager.began.playFeedback()
             UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.1, options: []) {
                 self.plot.transform = CGAffineTransform(scaleX: 1, y: 1)
             }
