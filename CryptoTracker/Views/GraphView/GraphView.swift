@@ -11,6 +11,9 @@ class GraphView: UIView {
     
     var viewModel: GraphViewModel
     
+    // track index for playing chagne feedback
+    private var currentIndex = 0
+    
     private lazy var graphLayer: CAShapeLayer = {
         let layer = CAShapeLayer()
         layer.fillColor = .none
@@ -67,12 +70,12 @@ class GraphView: UIView {
     
     @objc private func handleLongPress(_ recognizer: UILongPressGestureRecognizer) {
         if recognizer.state == .began {
-            HapticsManager.began.playFeedback()
             UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.1, options: []) {
                 self.plot.transform = CGAffineTransform(scaleX: 1, y: 1)
             }
+            HapticsManager.instance?.playFeedback(for: .began)
         }
-       
+        
         // pan
         
         let width = frame.width
@@ -95,10 +98,17 @@ class GraphView: UIView {
         
         if (0...points.count - 1).contains(index) {
             plot.frame.origin = CGPoint(x: spacing * CGFloat(index) - 24 , y: yPoint(points[index]) - 24)
+
+            if abs(index - currentIndex) >= 1 {
+                HapticsManager.instance?.playFeedback(for: .changed)
+            }
+    
+            currentIndex = index
         }
         
         if recognizer.state == .ended {
             self.plot.transform = CGAffineTransform(scaleX: 0, y: 0)
+            HapticsManager.instance?.playFeedback(for: .ended)
         }
     }
     
