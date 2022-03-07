@@ -31,7 +31,7 @@ class CoinDetailViewController: UIViewController {
     }()
     
     private lazy var graphView: GraphView = {
-        let graphView = GraphView(viewModel: GraphViewModel(coin: coin!, for: .thirty))
+        let graphView = GraphView(viewModel: GraphViewModel(coin: coin!, for: .one))
         graphView.translatesAutoresizingMaskIntoConstraints = false
         return graphView
     }()
