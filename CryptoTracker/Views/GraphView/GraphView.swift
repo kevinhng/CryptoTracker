@@ -11,6 +11,8 @@ class GraphView: UIView {
     
     var viewModel: GraphViewModel
     
+    weak var delegate: GraphViewDelegate?
+    
     // track index for playing chagne feedback
     private var currentIndex = 0
     
@@ -104,11 +106,13 @@ class GraphView: UIView {
             }
     
             currentIndex = index
+            delegate?.didChange(viewModel.chart?.dataPoints[index] ?? 0)
         }
         
         if recognizer.state == .ended {
             self.plot.transform = CGAffineTransform(scaleX: 0, y: 0)
             HapticsManager.instance?.playFeedback(for: .ended)
+            delegate?.didEnd()
         }
     }
     
@@ -164,4 +168,9 @@ extension GraphView: GraphViewModelDelegate {
             self.graphLayer.path = self.drawGraph()
         }
     }
+}
+
+protocol GraphViewDelegate: NSObject {
+    func didChange(_ price: Double)
+    func didEnd()
 }
