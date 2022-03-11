@@ -33,6 +33,7 @@ class CoinDetailViewController: UIViewController {
     private lazy var graphView: GraphView = {
         let graphView = GraphView(viewModel: GraphViewModel(coin: coin!, for: .one))
         graphView.translatesAutoresizingMaskIntoConstraints = false
+        graphView.delegate = self
         return graphView
     }()
     
@@ -123,5 +124,16 @@ class CoinDetailViewController: UIViewController {
 extension CoinDetailViewController: SegmentedControlDelegate {
     func didSelectSegment(_ segment: ChartDays) {
         graphView.viewModel.getMarketChart(days: segment)
+    }
+}
+
+// MARK: - GraphView Delegate
+extension CoinDetailViewController: GraphViewDelegate {
+    func didChange(_ price: Double) {
+        coinPriceLabel.text = price.asCurrency()
+    }
+    
+    func didEnd() {
+        coinPriceLabel.text = coin?.currentPrice?.asCurrency()
     }
 }
